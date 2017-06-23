@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MusicApp</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/sandstone/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/css/styles.css" rel="stylesheet" type="text/css">
+    
+</head>
+<body ng-app="klika_tech">
+	<div ng-controller="mainCtrl">
+		<section class="container">
+
+			<article class="col-md-12">
+				<ul>
+					<li>
+						<label for="singer">Singer</label>
+						<br/>
+						<input type="text" ng-model="songInfo.singer">
+					</li>
+					<li>
+						<label for="song">Song</label>
+						<br/>
+						<input type="text" ng-model="songInfo.song">
+					</li>
+					<li>
+						<label for="genre">Genre</label>
+						<br/>
+						<input type="text" ng-model="songInfo.genre">
+					</li>
+					<li>
+						<label for="year">Year</label>
+						<br/>
+						<input type="number" ng-minlength="0" ng-maxlength="2017" ng-model="songInfo.year">
+					</li>
+					<li>
+						<button ng-click="addMusic(songInfo)">ADD!</button>
+					</li>
+				</ul>
+			</article>
+			
+		</section>
+		<section  class="container">
+			<article class="col-md-7">
+				
+				<span class="numberOfSongs" ng-bind="'Number of songs: ' + newMusic.length"></span>
+				<!--<div ng-repeat="music in musics | startFrom:currentPage*pageSize | limitTo:pageSize">-->
+				<div class="data-menu">
+					<div class="singer" ng-click="orderByType('singer')">SINGER <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+					<div class="song"  ng-click="orderByType('song')">SONG <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+					<div class="genre" ng-click="orderByType('genre')">GENRE <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+					<div class="year" ng-click="orderByType('year')">YEAR <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+				</div>
+				<div class="data-info" ng-repeat="music in newMusic" ng-if="$index < pageSize">
+					<div class="singer" ng-bind="music.singer"></div>
+					<div class="song" ng-bind="music.song"></div>
+					<div class="genre" ng-bind="music.genre"></div>
+					<div class="year" ng-bind="music.year"></div>
+				</div>
+
+				<div class="pageNumber">
+					<ul>
+						<li class="arrow">
+							<button ng-click="previousPage(actualPage - 1)" ng-disabled="actualPage == 0">
+					  			<i class="fa fa-caret-left" aria-hidden="true"></i>
+							</button>
+						</li>
+						<li ng-repeat="i in pages(pageNumbers) track by $index" ng-click="setPageNum($index)" ng-bind="$index + 1" ng-class="{active: actualPage == $index }">
+						</li>
+						<li class="arrow"  >
+							<button ng-click="nextPage(actualPage + 1)" ng-disabled="actualPage >= (oldMusic.length/pageSize - 1)">
+							    <i class="fa fa-caret-right" aria-hidden="true"></i>
+							</button>
+						</li>
+					</ul>
+				</div>
+				<div class="resultsPerPage">
+					<ul>
+						<li ng-class="{active: pageSize==10}" ng-click="setResults(10)">10</li>
+						<li ng-class="{active: pageSize==25}" ng-click="setResults(25)">25</li>
+						<li ng-class="{active: pageSize==50}" ng-click="setResults(50)">50</li>
+						<li ng-class="{active: pageSize==100}" ng-click="setResults(100)">100</li>
+					</ul>
+				</div>
+			</article>
+			<article class="col-md-3 filter">
+				<ul>
+					<li>
+						<label for="singer">Singers</label>
+						<br/>
+						<select ng-model="musicFilterAttr.singer" ng-change="setNewMusic()" ng-options="singer.val as singer.desc for singer in singers">
+						</select>
+					</li>
+					<li>
+						<label for="genre">Genres</label>
+						<br/>
+						<select ng-model="musicFilterAttr.genre" ng-change="setNewMusic()" ng-options="genre.val as genre.desc for genre in genres"></select>
+					</li>
+					<li>
+						<label for="Year">Years</label>
+						<br/>
+						<select ng-model="musicFilterAttr.year" ng-change="setNewMusic()" ng-options="year.val as year.desc for year in years"></select>
+					</li>
+				</ul>
+			</article>
+		</section>
+	<div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+<script src="/js/bootstrap-noquery.js"></script>
+<script src="/js/modules/NgMusic.js"></script>
+<script src="/js/controllers/NgMusicalController.js"></script>
+<script src="/js/services/services.js"></script>
+</body>
+</html>

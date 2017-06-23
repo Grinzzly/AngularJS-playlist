@@ -1,0 +1,1 @@
+var klikatech = angular.module('klika_tech', []);

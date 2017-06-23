@@ -1,0 +1,21 @@
+{
+  "name": "KlikaTech",
+  "version": "1.0.0",
+  "description": "This is a test-chalenge for KlikaTech",
+  "main": "server.js",
+  "author": "Sergei Grin",
+  "repository" : { 
+     "type" : "git",
+     "url" : ""
+   },
+  "dependencies": {
+    "body-parser": "*",
+    "ejs": "^2.5.5",
+    "express": "*",
+    "mongoose": "^4.7.7",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.3.2"
+  },
+ "license" : "BSD-3-Clause"
+}
+

@@ -1,13 +1,6 @@
 var Music = require('../models/Music.js');
 
 exports.getMusicInfo = function (req, res) {
-    db.driver.execQuery(`
-insert into funnymusic values(
-            singer,
-            song,
-            genre,
-            year
-);    `, function (err, data) {});
 
 	Music.find().sort({singer:1}).exec(function(err, musicInfo) {
 		if(err) {

@@ -7,7 +7,10 @@ var app      = express();
 var mongoose = require('mongoose');
 var port  	 = process.env.PORT || 8888;
 
-mongoose.connect('mongodb://usuario2:password@ec2-52-56-133-40.eu-west-2.compute.amazonaws.com:27017/admin');
+//localDataBase so far
+//ec2-54-194-13-188.eu-west-1.compute.amazonaws.com
+mongoose.connect('mongodb://127.0.0.1:27017/KlikaTech');
+//mongoose.connect('mongodb://usuario2:password@ec2-52-56-133-40.eu-west-2.compute.amazonaws.com:27017/admin');
 
 app.set('view engine', 'ejs');
 app.use(logger('dev'));

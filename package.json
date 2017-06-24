@@ -4,18 +4,19 @@
   "description": "This is a test-chalenge for KlikaTech",
   "main": "server.js",
   "author": "Sergei Grin",
-  "repository" : { 
-     "type" : "git",
-     "url" : ""
-   },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
   "dependencies": {
     "body-parser": "*",
     "ejs": "^2.5.5",
     "express": "*",
+    "mongo": "^0.1.0",
     "mongoose": "^4.7.7",
+    "morgan": "^1.8.2",
     "path": "^0.12.7",
     "serve-favicon": "^2.3.2"
   },
- "license" : "BSD-3-Clause"
+  "license": "BSD-3-Clause"
 }
-

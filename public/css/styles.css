@@ -1,60 +1,26 @@
 ul {list-style: none; padding: 0px}
-ul li {float:left; margin:10px;}
-ul li button {background-color: red; color: white; border: 0px; margin: 25px 0px 0px 0px; border-radius: 5px;}
 
-select {    height: 30px;
+select {
+    height: 30px;
     width: 160px;
     border: 1px solid #666;
     background: #ffffff;
     color: #666;
-    font-size: 12px;}
+    font-size: 14px;
+}
 
 .numberOfSongs {float: right; font-size: 12px; line-height: 28px;}
 .data-menu, .data-info {width: 100%; display: table}
-.data-menu div {float:left; line-height: 30px; padding: 0px 10px; background-color: #21ABE2; color:white; cursor: pointer;border-right: 1px solid #fff; border-bottom: 1px solid #fff; font-size: 12px;display: table-cell;}
-.data-info div {float: left; line-height: 28px; padding: 0px 10px; background-color: #f3f3f3; color: #585858; border-right: 1px solid #fff; border-bottom: 1px solid #fff;font-size: 12px; display: table-cell;}
+.data-menu div {float:left; line-height: 40px; padding: 0px 10px; background-color: #369; color:white; cursor: pointer;border-right: 1px solid #fff; border-bottom: 1px solid #fff; font-size: 16px;display: table-cell;}
+.data-info div {float: left; line-height: 35px; padding: 0px 10px; background-color: #f3f3f3; color: #585858; border-right: 1px solid #fff; border-bottom: 1px solid #fff;font-size: 14px; display: table-cell;}
 .data-menu i {margin:0px 0px 0px 5px; line-height: 30px; }
 .data-menu .singer, .data-info .singer {width:32%;}
 .data-menu .song, .data-info .song {width:32%;}
 .data-menu .genre, .data-info .genre {width:21%;}
 .data-menu .year, .data-info .year {width:15%;}
 
-.pageNumber {float: left;}
-.pageNumber ul {float: left; margin: 15px 0px 0px 0px;}
-.pageNumber ul li {
-    height: 25px;
-    cursor: pointer;
-    width: 25px;
-    text-align: center;
-    margin: 0px;
-    border: 1px solid #ccc;
-    border-left: 0px;
-    line-height: 24px;
-    font-size: 10px;
-        color: #666;
-}
-
-.pageNumber ul li:first-child {border-left: 1px solid #ccc;}
-.pageNumber ul li.arrow {width: 26px;}
-.pageNumber ul li.arrow button {
-	background-color: #fff;
-    height: 23px;
-    color: #666;
-    width: 24px;
-    line-height: 20px;
-    font-size: 16px;
-    text-align: center;    margin: 0px;}
-.pageNumber ul li.active {color: white; background: #666; border:1px solid #666;}
-.pageNumber ul li span i {font-size: 22px; color: #585858; line-height: 23px;}
-
-.resultsPerPage { float: right; margin: 15px 1px 0px 0px; width:20%;}
-.resultsPerPage ul {float: right;}
-.resultsPerPage ul li {float: left; width: 25px; text-align: center; font-size: 10px; border: 1px solid #ccc; line-height: 25px; margin: 0px; cursor: pointer; border-right: 0px}
-
-.resultsPerPage ul li:last-child {border-right: 1px solid #ccc;}
-
-.filter {margin: 30px 0px 0px 10px;width: 20%;}
+/*.filter {margin: 30px 0px 0px 10px;width: 20%;}
 .filter ul {display: inline-block; margin: 15px 0px 20px 0px;}
-.filter ul li {float: none;}
+.filter ul li {float: none;}*/
 
 .resultsPerPage ul li.active {background-color:#666; border:1px solid #666; color:white;}

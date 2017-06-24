@@ -7,10 +7,10 @@ var app      = express();
 var mongoose = require('mongoose');
 var port  	 = process.env.PORT || 8888;
 
-//localDataBase so far
-//ec2-54-194-13-188.eu-west-1.compute.amazonaws.com
-mongoose.connect('mongodb://127.0.0.1:27017/KlikaTech');
-//mongoose.connect('mongodb://usuario2:password@ec2-52-56-133-40.eu-west-2.compute.amazonaws.com:27017/admin');
+//PLl5VZap3gHFkkEV
+mongoose.connect('mongodb://Admin:PLl5VZap3gHFkkEV@klikatechcluster-shard-00-00-kx2pc.mongodb.net:27017,klikatechcluster-shard-00-01-kx2pc.mongodb.net:27017,klikatechcluster-shard-00-02-kx2pc.mongodb.net:27017/KlikaTech?ssl=true&replicaSet=KlikaTechCluster-shard-0&authSource=admin');
+//mongoose.connect('mongodb://Administrator:GE-cizFxiSu@ec2-34-253-184-31.eu-west-1.compute.amazonaws.com:27017/KlikaTech');
+//mongoose.connect('mongodb://127.0.0.1:27017/KlikaTech');
 
 app.set('view engine', 'ejs');
 app.use(logger('dev'));

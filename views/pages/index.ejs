@@ -1,113 +1,258 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MusicApp</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/sandstone/bootstrap.min.css" rel="stylesheet">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-  <link href="/css/styles.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+	<title>MusicApp</title>
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/landing-page.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+	<link href="/css/styles.css" rel="stylesheet" type="text/css">
     
 </head>
 <body ng-app="klika_tech">
+
+	<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+		<div class="container topnav">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand topnav" href="#">Music App</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#about">About</a>
+					</li>
+					<li>
+						<a href="#services">Services</a>
+					</li>
+					<li>
+						<a href="#contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<a name="about"></a>
+	<div class="intro-header">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="intro-message">
+						<h1>Music App Challenge</h1>
+						<h3>resolved by Grinzzly</h3>
+						<hr class="intro-divider">
+						<ul class="list-inline intro-social-buttons">
+							<li>
+								<a href="https://twitter.com/greenzzly" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+							</li>
+							<li>
+								<a href="https://github.com/Grinzzly/KlikaTech" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+							</li>
+							<li>
+								<a href="https://www.linkedin.com/in/zamulko/" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- /.intro-header -->
 	<div ng-controller="mainCtrl">
-		<section class="container">
+		<a  name="services"></a>
+		<div class="content-section-a">
 
-			<article class="col-md-12">
-				<ul>
-					<li>
-						<label for="singer">Singer</label>
-						<br/>
-						<input type="text" ng-model="songInfo.singer">
-					</li>
-					<li>
-						<label for="song">Song</label>
-						<br/>
-						<input type="text" ng-model="songInfo.song">
-					</li>
-					<li>
-						<label for="genre">Genre</label>
-						<br/>
-						<input type="text" ng-model="songInfo.genre">
-					</li>
-					<li>
-						<label for="year">Year</label>
-						<br/>
-						<input type="number" ng-minlength="0" ng-maxlength="2017" ng-model="songInfo.year">
-					</li>
-					<li>
-						<button ng-click="addMusic(songInfo)">ADD!</button>
-					</li>
-				</ul>
-			</article>
-			
-		</section>
-		<section  class="container">
-			<article class="col-md-7">
-				
-				<span class="numberOfSongs" ng-bind="'Number of songs: ' + newMusic.length"></span>
-				<!--<div ng-repeat="music in musics | startFrom:currentPage*pageSize | limitTo:pageSize">-->
-				<div class="data-menu">
-					<div class="singer" ng-click="orderByType('singer')">SINGER <i class="fa fa-caret-down" aria-hidden="true"></i></div>
-					<div class="song"  ng-click="orderByType('song')">SONG <i class="fa fa-caret-down" aria-hidden="true"></i></div>
-					<div class="genre" ng-click="orderByType('genre')">GENRE <i class="fa fa-caret-down" aria-hidden="true"></i></div>
-					<div class="year" ng-click="orderByType('year')">YEAR <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<ul class="list-inline">
+									<li>
+										<label for="singer">Singer</label>
+										<br>
+										<input type="text" class="form-control" ng-model="songInfo.singer">
+									</li>
+									<li>
+										<label for="song">Song</label>
+										<br>
+										<input type="text" class="form-control" ng-model="songInfo.song">
+									</li>
+									<li>
+										<label for="genre">Genre</label>
+										<br>
+										<input type="text" class="form-control" ng-model="songInfo.genre">
+									</li>
+									<li>
+										<label for="year">Year</label>
+										<br>
+										<input type="number" class="form-control" ng-minlength="0" ng-maxlength="2017" ng-model="songInfo.year">
+									</li>
+									<li>
+										<button class= "btn btn-default" ng-click="addMusic(songInfo)">
+											<i class="fa fa-plus" aria-hidden="true"></i>
+											Add
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="data-info" ng-repeat="music in newMusic" ng-if="$index < pageSize">
-					<div class="singer" ng-bind="music.singer"></div>
-					<div class="song" ng-bind="music.song"></div>
-					<div class="genre" ng-bind="music.genre"></div>
-					<div class="year" ng-bind="music.year"></div>
-				</div>
+			</div>
 
-				<div class="pageNumber">
-					<ul>
-						<li class="arrow">
-							<button ng-click="previousPage(actualPage - 1)" ng-disabled="actualPage == 0">
-					  			<i class="fa fa-caret-left" aria-hidden="true"></i>
-							</button>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-sm-8 col-md-8">
+
+
+						<div class="data-menu">
+							<div class="singer" ng-click="orderByType('singer')">SINGER <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+							<div class="song"  ng-click="orderByType('song')">SONG <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+							<div class="genre" ng-click="orderByType('genre')">GENRE <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+							<div class="year" ng-click="orderByType('year')">YEAR <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+						</div>
+						<div class="data-info" ng-repeat="music in newMusic" ng-if="$index < pageSize">
+							<div class="singer" ng-bind="music.singer"></div>
+							<div class="song" ng-bind="music.song"></div>
+							<div class="genre" ng-bind="music.genre"></div>
+							<div class="year" ng-bind="music.year"></div>
+						</div>
+
+						<div class="pageNumber">
+							<nav aria-label="Page navigation">
+								<ul class="pagination">
+									<li>
+										<a href="#" aria-label="Previous" ng-click="previousPage(actualPage - 1)" ng-disabled="actualPage == 0">
+											<span aria-hidden="true">&laquo;</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" ng-repeat="i in pages(pageNumbers) track by $index" ng-click="setPageNum($index)" ng-bind="$index + 1" ng-class="{active: actualPage == $index }"></a>
+									</li>
+									<li>
+										<a href="#" aria-label="Next" ng-click="nextPage(actualPage + 1)" ng-disabled="actualPage >= (oldMusic.length/pageSize - 1)">
+											<span aria-hidden="true">&raquo;</span>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+
+						<div class="resultsPerPage pull-left">
+							<div class="btn-group" role="group">
+								<button type="button" ng-class="{active: pageSize==10}" ng-click="setResults(10)" class="btn btn-sm btn-default">10</button>
+								<button type="button" ng-class="{active: pageSize==25}" ng-click="setResults(25)" class="btn btn-sm btn-default">25</button>
+								<button type="button" ng-class="{active: pageSize==50}" ng-click="setResults(50)" class="btn btn-sm btn-default">50</button>
+								<button type="button" ng-class="{active: pageSize==100}" ng-click="setResults(100)" class="btn btn-sm btn-default">100</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-lg-offset-1 col-sm-3 col-sm-offset-1 col-md-3 col-md-offset-1">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Filter</h3>
+							</div>
+							<div class="panel-body">
+								<ul>
+									<li>
+										<label for="singer">Singers</label>
+										<select class="form-control" ng-model="musicFilterAttr.singer" ng-change="setNewMusic()" ng-options="singer.val as singer.desc for singer in singers">
+										</select>
+									</li>
+									<br>
+									<li>
+										<label for="genre">Genres</label>
+										<select class="form-control" ng-model="musicFilterAttr.genre" ng-change="setNewMusic()" ng-options="genre.val as genre.desc for genre in genres"></select>
+									</li>
+									<br>
+									<li>
+										<label for="Year">Years</label>
+										<select class="form-control" ng-model="musicFilterAttr.year" ng-change="setNewMusic()" ng-options="year.val as year.desc for year in years"></select>
+									</li>
+									<br>
+									<li>
+										<span class="numberOfSongs" ng-bind="'Number of songs: ' + newMusic.length"></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a  name="contact"></a>
+	<div class="banner">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-6">
+					<h2>Connect by:</h2>
+				</div>
+				<div class="col-lg-6">
+					<ul class="list-inline banner-social-buttons">
+						<li>
+							<a href="https://twitter.com/greenzzly" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
 						</li>
-						<li ng-repeat="i in pages(pageNumbers) track by $index" ng-click="setPageNum($index)" ng-bind="$index + 1" ng-class="{active: actualPage == $index }">
+						<li>
+							<a href="https://github.com/Grinzzly/KlikaTech" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
 						</li>
-						<li class="arrow"  >
-							<button ng-click="nextPage(actualPage + 1)" ng-disabled="actualPage >= (oldMusic.length/pageSize - 1)">
-							    <i class="fa fa-caret-right" aria-hidden="true"></i>
-							</button>
+						<li>
+							<a href="https://www.linkedin.com/in/zamulko/" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
 						</li>
 					</ul>
 				</div>
-				<div class="resultsPerPage">
-					<ul>
-						<li ng-class="{active: pageSize==10}" ng-click="setResults(10)">10</li>
-						<li ng-class="{active: pageSize==25}" ng-click="setResults(25)">25</li>
-						<li ng-class="{active: pageSize==50}" ng-click="setResults(50)">50</li>
-						<li ng-class="{active: pageSize==100}" ng-click="setResults(100)">100</li>
+			</div>
+
+		</div>
+		<!-- /.container -->
+
+	</div>
+	<!-- /.banner -->
+
+	<!-- Footer -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<ul class="list-inline">
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li class="footer-menu-divider">&sdot;</li>
+						<li>
+							<a href="#about">About</a>
+						</li>
+						<li class="footer-menu-divider">&sdot;</li>
+						<li>
+							<a href="#services">Services</a>
+						</li>
+						<li class="footer-menu-divider">&sdot;</li>
+						<li>
+							<a href="#contact">Contact</a>
+						</li>
 					</ul>
+					<p class="copyright text-muted small">Copyright &copy; Sergei Grin 2017. All Rights Reserved</p>
 				</div>
-			</article>
-			<article class="col-md-3 filter">
-				<ul>
-					<li>
-						<label for="singer">Singers</label>
-						<br/>
-						<select ng-model="musicFilterAttr.singer" ng-change="setNewMusic()" ng-options="singer.val as singer.desc for singer in singers">
-						</select>
-					</li>
-					<li>
-						<label for="genre">Genres</label>
-						<br/>
-						<select ng-model="musicFilterAttr.genre" ng-change="setNewMusic()" ng-options="genre.val as genre.desc for genre in genres"></select>
-					</li>
-					<li>
-						<label for="Year">Years</label>
-						<br/>
-						<select ng-model="musicFilterAttr.year" ng-change="setNewMusic()" ng-options="year.val as year.desc for year in years"></select>
-					</li>
-				</ul>
-			</article>
-		</section>
-	<div>
+			</div>
+		</div>
+	</footer>
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
-<script src="/js/bootstrap-noquery.js"></script>
+<script	src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="/js/modules/NgMusic.js"></script>
 <script src="/js/controllers/NgMusicalController.js"></script>
 <script src="/js/services/services.js"></script>

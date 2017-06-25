@@ -38,8 +38,8 @@
 						<div class="collapse navbar-collapse" id="myNavbar">
 							<ul class="nav navbar-nav navbar-right">
 								<li><a rel="shadow-radial" class="button shadow-radial scroll" href="#hover">Music App</a></li>
-								<li><a rel="shadow-radial" class="button shadow-radial scroll" href="#add">Add</a></li>
-								<li><a rel="shadow-radial" class="button shadow-radial scroll" href="#down">Playlist</a></li>
+								<li><a rel="shadow-radial" class="button shadow-radial scroll" href="#hower">Add</a></li>
+								<li><a rel="shadow-radial" class="button shadow-radial scroll" href="#hower">Playlist</a></li>
 								<li><a rel="shadow-radial" class="button shadow-radial scroll" href="#follow">Follow</a></li>
 							</ul>
 							</div>
@@ -65,72 +65,69 @@
 				<div class="content">
 					<div class="about">
 						<div class="top">
-							<div class="col-md-7" id="hover">
-								<div class="hover1">
-									<h2>Filter</h2>
+							<div class="row">
+								<div class="col-md-7" id="hover">
+									<div class="hover1">
+										<h2>Filter</h2>
+										<ul>
+											<li>
+												<label for="singer">Singers</label>
+												<select class="form-control" ng-model="musicFilterAttr.singer" ng-change="setNewMusic()" ng-options="singer.val as singer.desc for singer in singers">
+												</select>
+											</li>
+											<br>
+											<li>
+												<label for="genre">Genres</label>
+												<select class="form-control" ng-model="musicFilterAttr.genre" ng-change="setNewMusic()" ng-options="genre.val as genre.desc for genre in genres"></select>
+											</li>
+											<br>
+											<li>
+												<label for="Year">Years</label>
+												<select class="form-control" ng-model="musicFilterAttr.year" ng-change="setNewMusic()" ng-options="year.val as year.desc for year in years"></select>
+											</li>
+											<br>
+											<li>
+												<span class="numberOfSongs" ng-bind="'Number of songs: ' + newMusic.length"></span>
+											</li>
+										</ul>
+									</div>
+									<h2 id="Playlist">Playlist</h2>
+								</div>
+
+								<div class="col-md-5" id="profile">
+									<h2>Add New Song</h2>
 									<ul>
 										<li>
-											<label for="singer">Singers</label>
-											<select class="form-control" ng-model="musicFilterAttr.singer" ng-change="setNewMusic()" ng-options="singer.val as singer.desc for singer in singers">
-											</select>
+											<label for="singer">Singer</label>
+											<br>
+											<input type="text" class="form-control" ng-model="songInfo.singer" required>
 										</li>
 										<br>
 										<li>
-											<label for="genre">Genres</label>
-											<select class="form-control" ng-model="musicFilterAttr.genre" ng-change="setNewMusic()" ng-options="genre.val as genre.desc for genre in genres"></select>
+											<label for="song">Song</label>
+											<br>
+											<input type="text" class="form-control" ng-model="songInfo.song" required>
 										</li>
 										<br>
 										<li>
-											<label for="Year">Years</label>
-											<select class="form-control" ng-model="musicFilterAttr.year" ng-change="setNewMusic()" ng-options="year.val as year.desc for year in years"></select>
+											<label for="genre">Genre</label>
+											<br>
+											<input type="text" class="form-control" ng-model="songInfo.genre" required>
 										</li>
 										<br>
 										<li>
-											<span class="numberOfSongs" ng-bind="'Number of songs: ' + newMusic.length"></span>
+											<label for="year">Year</label>
+											<br>
+											<input type="number" class="form-control" ng-minlength="0" ng-maxlength="2017" ng-model="songInfo.year">
+										</li>
+										<br>
+										<li class="adding">
+											<a class="add button outline-inward" ng-click="addMusic(songInfo)">ADD</a>
 										</li>
 									</ul>
 								</div>
 							</div>
-
-						<!--<a name="add"></a>-->
-						<div class="col-md-5" id="profile" id="add">
-							<h2>Add New Song</h2>
-								<ul>
-									<li>
-										<label for="singer">Singer</label>
-										<br>
-										<input type="text" class="form-control" ng-model="songInfo.singer" required>
-									</li>
-									<br>
-									<li>
-										<label for="song">Song</label>
-										<br>
-										<input type="text" class="form-control" ng-model="songInfo.song" required>
-									</li>
-									<br>
-									<li>
-										<label for="genre">Genre</label>
-										<br>
-										<input type="text" class="form-control" ng-model="songInfo.genre" required>
-									</li>
-									<br>
-									<li>
-										<label for="year">Year</label>
-										<br>
-										<input type="number" class="form-control" ng-minlength="0" ng-maxlength="2017" ng-model="songInfo.year">
-									</li>
-									<br>
-									<li class="adding">
-										<a class="add button outline-inward" ng-click="addMusic(songInfo)">ADD</a>
-										<!--<button class= "btn btn-default" ng-click="addMusic(songInfo)">
-											<i class="fa fa-plus" aria-hidden="true"></i>
-											Add
-										</button>-->
-									</li>
-								</ul>
 						</div>
-						<!--<div class="clearfix"></div>-->
-					</div>
 
 
 						<div class="col-md-12">

@@ -9,18 +9,1981 @@ select {
     font-size: 14px;
 }
 
-.numberOfSongs {float: right; font-size: 12px; line-height: 28px;}
-.data-menu, .data-info {width: 100%; display: table}
-.data-menu div {float:left; line-height: 40px; padding: 0px 10px; background-color: #369; color:white; cursor: pointer;border-right: 1px solid #fff; border-bottom: 1px solid #fff; font-size: 16px;display: table-cell;}
-.data-info div {float: left; line-height: 35px; padding: 0px 10px; background-color: #f3f3f3; color: #585858; border-right: 1px solid #fff; border-bottom: 1px solid #fff;font-size: 14px; display: table-cell;}
+.numberOfSongs {
+    float: right;
+    font-size: 12px;
+    line-height: 28px;
+}
+
+.data-menu, .data-info {
+    width: 100%;
+    display: table;
+}
+
+.data-menu div {
+    float:left;
+    line-height: 40px;
+    padding: 0px 10px;
+    background-color:rgba(0, 0, 0, 0.8);
+    color : #12ffb9;
+    cursor : pointer;
+    border-right : 1px solid maroon;
+    border-bottom : 1px solid maroon;
+    font-size: 16px;
+    display: table-cell;
+}
+
+.data-info div {
+    float: left;
+    line-height: 35px;
+    padding: 0px 10px;
+    background-color:rgba(0, 0, 0, 0.5);
+    color: white;
+    border-right: 1px solid maroon;
+    border-bottom: 1px solid maroon;
+    font-size: 14px;
+    display: table-cell;
+}
+
 .data-menu i {margin:0px 0px 0px 5px; line-height: 30px; }
 .data-menu .singer, .data-info .singer {width:32%;}
 .data-menu .song, .data-info .song {width:32%;}
 .data-menu .genre, .data-info .genre {width:21%;}
 .data-menu .year, .data-info .year {width:15%;}
 
-/*.filter {margin: 30px 0px 0px 10px;width: 20%;}
-.filter ul {display: inline-block; margin: 15px 0px 20px 0px;}
-.filter ul li {float: none;}*/
+.resultsPerPage ul li.active {
+    background-color:#666;
+    border : 1px solid #666;
+    color:white;
+}
 
-.resultsPerPage ul li.active {background-color:#666; border:1px solid #666; color:white;}
+.resultsPerPage {
+    margin : 20px 0px 20px 0px;
+}
+
+.pageNumber {
+    margin : 0px 20px 0px 20px;
+}
+
+body {
+    padding:0;
+    margin:0;
+    background:#FFF;
+}
+body a {
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -o-transition:0.5s all;
+    -ms-transition:0.5s all;
+    text-decoration: none;
+}
+body a:hover {
+    text-decoration: none;
+}
+body a:focus, a:hover {
+    text-decoration: none;
+}
+input[type="button"],input[type="submit"] {
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -o-transition:0.5s all;
+    -ms-transition:0.5s all;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin:0;
+    padding:0;
+}
+p {
+    margin:0;
+}
+ul {
+    margin:0;
+    padding:0;
+}
+label {
+    margin:0;
+}
+
+@font-face{
+    font-family: 'Montserrat-Regular';
+    src: url(/fonts/Montserrat-Regular.ttf) format('truetype');
+}
+@font-face{
+    font-family: 'Bangers';
+    src: url(/fonts/Bangers.ttf) format('truetype');
+}
+@font-face{
+    font-family: 'Oswald-Light';
+    src: url(/fonts/Oswald-Light.ttf) format('truetype');
+}
+
+#grad1 {
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#0066FF, #12FFB9); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#0066FF, #12FFB9); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#0066FF, #12FFB9); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #0066FF, #12FFB9); /* Standard syntax (must be last) */
+}
+
+h1 {
+    text-align: center;
+    padding-top: 50px;
+    margin: 0 0 50px 0;
+    font-family: 'Bangers';
+    font-size: 70px;
+    color: #EEE;
+    letter-spacing: 2px;
+}
+
+.banner {
+    background: url("/img/banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    position: relative;
+    -webkit-background-size:cover;
+    -o-background-size:cover;
+    -moz-background-size:cover;
+    -ms-background-size:cover;
+    -webkit-box-shadow: 0px -5px 85px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -5px 85px -4px rgba(0,0,0,0.75);
+    box-shadow: 0px -5px 85px -4px rgba(0,0,0,0.75);
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+    border: none;
+}
+.navbar-right {
+    float: left!important;
+    margin-right: -15px;
+}
+.navbar-nav>li {
+    float: left;
+    margin: 0 46px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.navbar-nav>li:hover {
+    background-color: #333;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #EEE;
+    font-size: 17px;
+    font-family: 'Montserrat-Regular';
+    padding-bottom: 19px;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    color: #FFF;
+    cursor: pointer;
+    font-weight: bold;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: rgba(238, 238, 238, 0);
+    background-color: rgba(51, 51, 51, 0.58);
+}
+.container>.navbar-collapse, .container>.navbar-header {
+    margin-left: -15px;
+    width: 100%;
+}
+ul.nav.navbar-nav.navbar-right {
+    width: 100%;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #fff;
+    background-color: transparent;
+}
+
+.login-pop {
+    float: left;
+    width: 35%;
+    text-align: center;
+}
+#loginpop {
+    position: relative;
+}
+i.arrow {
+    font-size: 0.9em;
+    color: #34353a;
+    vertical-align: baseline;
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -o-transition:0.5s all;
+    -ms-transition:0.5s all;
+}
+#loginpop a span:hover i.arrow{
+    color:#fff;
+}
+#loginpop a {
+    text-decoration:none;
+    font-family: 'Montserrat-Regular';
+}
+#loginpop a span {
+    display: block;
+    color: #EEE;
+    font-size: 17px;
+    padding: 15px 15px;
+    font-family: 'Montserrat-Regular';
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+#loginpop a span:hover {
+    color: #FFF;
+    font-weight: bold;
+}
+
+#loginButton {
+    display:inline-block;
+    position:relative;
+    z-index:30;
+    cursor:pointer;
+}
+
+#loginBox {
+    position: absolute;
+    top: 65px;
+    right: -39px;
+    display: none;
+    z-index: 29;
+    margin-bottom: 20px;
+}
+#loginForm:after {
+    content: '';
+    position: absolute;
+    right: 17px;
+    top: -8px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #FFF;
+}
+
+#loginForm {
+    width: 300px;
+    background: #fff;
+    border: 1px solid #d6d6d6;
+    padding-bottom: 1.5em;
+}
+#loginForm fieldset {
+    margin:0 0 15px 0;
+    display:block;
+    border:0;
+    padding:0;
+}
+fieldset#body {
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    padding:15px 15px;
+    margin:0;
+}
+#loginForm #checkbox {
+    width:auto;
+    margin:2px 6px 0 0;
+    float:left;
+    padding:0;
+    border:0;
+}
+#body label {
+    color:#34353a;
+    margin: 1px 0 0 0;
+    display:block;
+    float:left;
+    font-size:0.8725em;
+    font-weight: 400;
+    font-family: 'Montserrat-Regular';
+}
+#loginForm #body fieldset label{
+    display:block;
+    float:none;
+    margin:0 0 6px 0;
+    text-align: left;
+}
+#loginForm #login {
+    width: 100%;
+    background: #0166FF;
+    color: #fff;
+    font-size: 0.875em;
+    padding: 8px 20px;
+    border: none;
+    margin: 0 12px 10px 0;
+    cursor: pointer;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    outline: none;
+    text-transform: uppercase;
+}
+#loginForm #login:hover{
+    background:#0025CA;
+}
+#loginForm input {
+    width: 100%;
+    border: 1px solid #DADADA;
+    color: #222;
+    background: #FFF;
+    padding: 6px;
+    font-size: 0.8125em;
+    -webkit-apperance: none;
+    outline: none;
+    font-family: 'Montserrat-Regular';
+}
+#body label i {
+    color: #000;
+    font-size: 1em;
+    font-style: normal;
+}
+#loginForm span a {
+    color:#34353a;
+    font-size: 13px;
+    font-weight: 400;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0 16px;
+}
+a.signup {
+    color: rgba(51, 51, 51, 0.9);
+}
+
+.shadow-radial {
+    display: inline-block;
+    position: relative;
+}
+
+.shadow-radial:before,
+.shadow-radial:after {
+    pointer-events: none;
+    position: absolute;
+    content: '';
+    left: 0;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    height: 5px;
+    opacity: 0;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+}
+
+.shadow-radial:before {
+    bottom: 100%;
+    background: -webkit-radial-gradient(50% 150%, ellipse, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(ellipse at 50% 150%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+}
+
+.shadow-radial:after {
+    top: 100%;
+    background: -webkit-radial-gradient(50% -50%, ellipse, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(ellipse at 50% -50%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+}
+
+.shadow-radial:hover:before,
+.shadow-radial:hover:after {
+    opacity: 1;
+}
+
+#heading h2 {
+    font-family: 'Montserrat-Regular';
+    font-weight: bold;
+    font-size: 80px;
+    color: #FFF;
+    margin: 20px 0 20px 95px;
+    letter-spacing: 0
+}
+#heading span {
+    font-family: 'candara';
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 100px;
+    color: #12ffb9;
+}
+#heading p {
+    font-family: 'Oswald-Light';
+    font-size: 20px;
+    color: #FFF;
+    margin-top: 20px;
+    margin-left: 105px;
+}
+
+.outline-inward {
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    color: #f5f5f5;
+    width: 35%;
+    text-align: center;
+    padding: 4px 0;
+    font-size: 20px;
+    font-family: 'Oswald-Light';
+    font-weight: bold;
+    margin: 50px 0 0 0;
+    margin-left: 37%;
+    cursor: pointer;
+    border: 1px solid #f5f5f5;
+}
+.outline-inward:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.outline-inward:before {
+    content: '';
+    position: absolute;
+    border: #ececec solid 4px;
+    top: -16px;
+    right: -16px;
+    bottom: -16px;
+    left: -16px;
+    opacity: 0;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-property: top right bottom left;
+    transition-property: top right bottom left;
+}
+.outline-inward:hover:before {
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+    opacity: 1;
+}
+
+#girl {
+    position: relative;
+}
+.headphone {
+    position: absolute;
+    top: 24px;
+}
+img {
+    width: 100%;
+}
+.shorter {
+    width: 30%;
+}
+.about {
+    background: url("/img/music.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 1280px;
+    -webkit-box-shadow: 1px 0px 135px 13px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 0px 135px 13px rgba(0,0,0,0.75);
+    box-shadow: 1px 0px 135px 13px rgba(0,0,0,0.75);
+}
+div#hover {
+    position: relative;
+}
+.hover1 {
+    position: absolute;
+    top: -40px;
+    background-color: #231f20;
+    padding: 40px;
+    width: 350px;
+}
+
+.hover1 h2 {
+    text-align: center;
+    font-family: 'candara';
+    font-size: 45px;
+    font-weight: bold;
+    color: #12FFB9;
+}
+
+.hover1 ul {
+    color: white;
+}
+
+.adding a.button.outline-inward {
+    margin-left: 33%;
+}
+
+div#profile {
+    padding: 35px 100px 80px 0px;
+    color : white;
+}
+#profile h2 {
+    font-size: 50px;
+    font-family: 'candara';
+    font-weight: bold;
+    color: #12FFB9;
+}
+
+ul.icons {
+    margin: 30px 0 0 30px;
+}
+ul.icons li {
+    display: inline-block;
+}
+ul.icons li a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: url("/img/img-sprite.png") no-repeat 0px 0px;
+}
+ul.icons li a.fb {
+    background-position: 0px 0px;
+}
+ul.icons li a.fb:hover {
+    background-position: 0px -50px;
+}
+ul.icons li a.twt {
+    background-position: -50px 0px;
+}
+ul.icons li a.twt:hover {
+    background-position: -50px -50px;
+}
+ul.icons li a.gplus {
+    background-position: -100px 0px;
+}
+ul.icons li a.gplus:hover {
+    background-position: -100px -50px;
+}
+
+.footer {
+    background-color: #333;
+    margin-bottom: 80px;
+    text-align: center;
+    -webkit-box-shadow: 1px 20px 135px 13px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 20px 135px 13px rgba(0,0,0,0.75);
+    box-shadow: 1px 20px 135px 13px rgba(0,0,0,0.75);
+}
+.social {
+    padding: 30px 0 20px 0;
+}
+
+ul.social li {
+    display: inline-block;
+}
+ul.social li a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: url("/img/img-sprite.png") no-repeat 0px 0px;
+}
+ul.social li a.facebook {
+    background-position: 0px 0px;
+}
+ul.social li a.facebook:hover {
+    background-position: 0px -50px;
+}
+ul.social li a.twitter {
+    background-position: -50px 0px;
+}
+ul.social li a.twitter:hover {
+    background-position: -50px -50px;
+}
+ul.social li a.googleplus {
+    background-position: -100px 0px;
+}
+ul.social li a.googleplus:hover {
+    background-position: -100px -50px;
+}
+ul.social li a.instagram {
+    background-position: -150px 0px;
+}
+ul.social li a.instagram:hover {
+    background-position: -150px -50px;
+}
+ul.social li a.youtube {
+    background-position: -200px 0px;
+}
+ul.social li a.youtube:hover {
+    background-position: -200px -50px;
+}
+ul.social li a.itunes {
+    background-position: -250px 0px;
+}
+ul.social li a.itunes:hover {
+    background-position: -250px -50px;
+}
+
+.copyright {
+    padding: 0 0 30px 0;
+    text-align: center;
+}
+.copyright p {
+    font-size: 18px;
+    font-family: 'Oswald-Light';
+    color: #FFF;
+}
+.copyright a {
+    color: #FFF;
+    text-decoration: none;
+}
+.copyright a:hover {
+    color: #B3CD9E;
+    text-decoration: underline;
+}
+
+#toTop {
+    display: none;
+    text-decoration: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    overflow: hidden;
+    width: 48px;
+    height: 48px;
+    border: none;
+    text-indent: 100%;
+    background: url("/img/to-top2.png") no-repeat 0px 0px;
+}
+
+@media screen and (max-width:1920px) {
+    .headphone {
+        top: 100px;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .navbar-nav>li {
+        float: left;
+        margin: 0 30px;
+    }
+    #heading h2 {
+        margin-left: 23px;
+    }
+    #heading span {
+        margin-left: 10%;
+    }
+    #heading p {
+        margin-left: 10%;
+    }
+    .headphone {
+        top: 47px;
+        width: 80%;
+    }
+    .hover1 {
+        padding: 50px 25px;
+    }
+    .about {
+        height: 911px;
+    }
+
+    .downloads {
+        top: 40%;
+        left: 3%;
+    }
+    #download h3 {
+        font-size: 27px;
+        padding: 25px 0 10px 0;
+    }
+    #download p {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    div#download {
+        width: 31%;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .navbar-nav>li {
+        margin: 0 20px;
+    }
+    .navbar-default .navbar-nav>li>a {
+        font-size: 15px;
+        padding: 10px 10px;
+    }
+    #loginpop a span {
+        font-size: 15px;
+        padding: 10px;
+    }
+    #heading span {
+        margin-left: 4%;
+    }
+    .para {
+        width: 45%;
+    }
+    .outline-inward {
+        width: 25%;
+        margin-left: 7%;
+    }
+    .headphone {
+        top: -311px;
+        width: 65%;
+        left: 250px;
+    }
+    .hover1 {
+        width: 50%;
+        padding: 50px 15px;
+    }
+    .hover1 a.button.outline-inward {
+        margin-left: 25%;
+        width: 50%;
+    }
+    div#profile {
+        width: 50%;
+        float: right;
+        padding: 20px 0 50px 35px;
+    }
+    div#down {
+        width: 60%;
+    }
+    #down h3 {
+        font-size: 50px;
+        margin: 20px;
+    }
+    #down p {
+        padding: 0 23px;
+    }
+    #down a.button.outline-inward {
+        margin-top: 20px;
+        margin-left: 30%;
+        width: 30%;
+    }
+    .downloads {
+        top: 5%;
+        left: 3.5%;
+    }
+    div#download {
+        width: 50%;
+    }
+    .appstore, .playstore, .msstore {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width:966px) {
+    div#heading {
+        width: 50%;
+    }
+    #heading h2 {
+        margin-left: 0;
+    }
+    #heading span {
+        margin-left: 1%;
+    }
+    #heading p {
+        margin-left: 2%;
+    }
+    #heading .outline-inward {
+        margin-left: 20%;
+        width: 40%;
+    }
+    .para {
+        width: 90%;
+    }
+    .headphone {
+        top: -268px;
+        left: 280px;
+        width: 60%;
+    }
+    .hover1 {
+        padding: 40px 38px;
+        width: 50%;
+    }
+    .hover1 h2 {
+        font-size: 39px;
+    }
+    div#profile {
+        padding: 10px 20px 50px;
+        width: 50%;
+        left: 15px;
+    }
+    ul.icons {
+        margin: 30px 0 0 0;
+        text-align: center;
+    }
+    div#down {
+        width: 60%;
+    }
+    #down h3 {
+        font-size: 53px;
+        margin-left: 0;
+    }
+    #down p {
+        padding: 0 0px;
+        width: 74%;
+        font-size: 17px;
+    }
+    #down a.button.outline-inward {
+        margin-left: 23%;
+        width: 30%;
+        margin-top: 30px;
+    }
+    .social {
+        padding: 30px 0;
+    }
+    .copyright p {
+        font-size: 16px;
+    }
+    .downloads {
+        top: 2%;
+        left: 3%;
+    }
+    div#download {
+        width: 41%;
+    }
+    .grid1 {
+        float: left;
+        width: 25%;
+    }
+    .grid2 {
+        float: left;
+        width: 25%;
+    }
+    .grid3 {
+        float: left;
+        width: 25%;
+    }
+    .grid4 {
+        float: left;
+        width: 25%;
+    }
+
+    .appstore, .playstore, .msstore {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width:853px) {
+    #heading h2 {
+        text-align: left;
+    }
+    #heading span {
+        margin-left: 0 !important;
+    }
+    #heading p {
+        margin-left: 2%;
+        font-size: 18px;
+    }
+    #heading .outline-inward {
+        margin-left: 25%;
+    }
+    .headphone {
+        top: -231px;
+    }
+    .hover1 {
+        padding: 40px 25px;
+    }
+    .hover1 h2 {
+        font-size: 42px;
+    }
+    div#profile {
+        padding: 20px 40px;
+    }
+    #profile h3 {
+        font-size: 23px;
+    }
+    div#down {
+        width: 55%;
+    }
+    #down h3 {
+        margin: 40px 0 20px 30px;
+        font-size: 50px;
+    }
+    #down p {
+        padding: 0 32px;
+        width: 100%
+    }
+    .downloads {
+        top: 5%;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .para {
+        width: 90%;
+    }
+    div#profile {
+        padding: 20px 10px;
+        width: 50%;
+    }
+    .headphone {
+        top: -274px;
+        left: 260px;
+        width: 65%;
+    }
+    .hover1 {
+        padding: 40px 20px;
+        width: 50%;
+    }
+    #down h3 {
+        margin: 40px 0 20px 0px;
+    }
+    #down p {
+        padding: 0 5px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        width: 720px;
+    }
+    .navbar-nav>li {
+        margin: 0 18px;
+    }
+    #heading h2 {
+        padding-top: 45px;
+    }
+    #heading .outline-inward {
+        margin-left: 20%;
+        width: 40%;
+    }
+    .headphone {
+        top: -256px;
+        left: 270px;
+        width: 60%;
+    }
+    .hover1 {
+        padding: 40px 10px;
+    }
+    #down h3 {
+        margin: 60px 0 20px 0px;
+        font-size: 50px;
+    }
+    ul.icons {
+        margin: 30px 0 0 30px;
+    }
+    img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:736px) {
+    .container {
+        width: 685px;
+    }
+    #heading p {
+        font-size: 19px;
+    }
+    .navbar-nav {
+        margin: 7.5px 0px;
+    }
+    .navbar-nav>li {
+        float: none;
+        margin: 0 0;
+    }
+    .navbar-default .navbar-nav>li>a {
+        padding: 10px 0;
+    }
+    .navbar-toggle {
+        margin-right: 8px;
+    }
+    .container>.navbar-collapse {
+        text-align: center;
+        width: 100%;
+        float: right;
+        border-top: none;
+        margin-right: 15px;
+        text-indent: 28px;
+    }
+    .headphone {
+        top: -264px;
+        width: 60%;
+    }
+    .hover1 h2 {
+        font-size: 40px;
+    }
+    div#profile {
+        padding: 15px 10px;
+    }
+    #profile h3 {
+        font-size: 23px;
+    }
+    #profile p {
+        font-size: 15px;
+    }
+    #down a.button.outline-inward {
+        margin-left: 30%;
+        width: 35%;
+    }
+    .login-pop {
+        width: 97%;
+        margin-left: 0;
+    }
+    a#loginButton {
+        width: 99%;
+    }
+    #loginForm:after {
+        right: 137px;
+        top: -9px;
+    }
+    #loginBox {
+        top: 55px;
+        right: 125px;
+    }
+    #loginpop a span {
+        margin-left: -28px;
+        padding: 10px 0px;
+    }
+    #loginpop a span:hover {
+        background-color: #333;
+    }
+}
+
+@media screen and (max-width:667px) {
+    .container {
+        width: 620px;
+    }
+    .navbar-nav>li {
+        margin: 0 4px;
+    }
+    #heading h2 {
+        padding-top: 20px;
+    }
+    #heading .outline-inward {
+        margin-left: 20%;
+    }
+    .headphone {
+        top: -229px;
+        left: 210px;
+        width: 65%;
+    }
+    .hover1 h2 {
+        font-size: 37px;
+    }
+    #down h3 {
+        font-size: 44px;
+    }
+    .hover1 p {
+        font-size: 15px;
+        margin-left: 19px;
+    }
+    #profile h2 {
+        font-size: 45px;
+    }
+    #profile h3 {
+        font-size: 21px;
+    }
+    #profile p {
+        font-size: 14px;
+    }
+    ul.icons {
+        margin: 30px 0 0 5px;
+    }
+    a#loginButton {
+        width: 97.5%;
+    }
+    #loginBox {
+        right: 90px;
+    }
+}
+
+@media screen and (max-width:640px) {
+    .container {
+        width: 592px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .container>.navbar-collapse {
+        text-align: center;
+        width: 100%;
+        float: right;
+        border-top: none;
+    }
+    #heading h2 {
+        font-size: 70px;
+    }
+    .headphone {
+        top: -230px;
+        left: 180px;
+        width: 70%;
+    }
+    .hover1 {
+        padding: 40px 5px;
+    }
+    .hover1 h2 {
+        font-size: 35px;
+    }
+    div#profile {
+        padding: 10px 15px;
+    }
+    #profile h2 {
+        font-size: 40px;
+    }
+    #profile h3 {
+        font-size: 18px;
+    }
+    #profile p {
+        font-size: 17px;
+    }
+    ul.icons {
+        margin: 30px 0 0 0px;
+    }
+    #down h3 {
+        font-size: 40px;
+    }
+    #down a.button.outline-inward {
+        margin-left: 20%;
+        width: 40%;
+    }
+    #loginBox {
+        right: 75px;
+    }
+}
+
+@media screen and (max-width:603px) {
+    .container {
+        width: 555px;
+    }
+    .container>.navbar-collapse, .container>.navbar-header {
+        margin-right: 15px;
+    }
+    .navbar-toggle {
+        margin-right: 7px;
+    }
+    .container>.navbar-collapse {
+        text-align: center;
+        width: 100%;
+    }
+    .navbar-right {
+        float: left!important;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    .navbar-nav>li {
+        margin: 0 0px;
+    }
+    #loginBox {
+        right: 57px;
+    }
+    .headphone {
+        top: -204px;
+        left: 140px;
+        width: 75%;
+    }
+    #heading h2 {
+        font-size: 70px;
+    }
+    #heading span {
+        font-size: 40px;
+    }
+    #heading p {
+        font-size: 17px;
+    }
+    #heading .outline-inward {
+        margin-left: 4%;
+        width: 45%;
+    }
+    .hover1 {
+        padding: 20px 10px 30px 10px;
+        width: 50%;
+        top: -20px;
+    }
+    .hover1 h2 {
+        font-size: 33px;
+        margin-top: 10px;
+    }
+    .hover1 p {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+    .hover1 a.button.outline-inward {
+        margin-left: 27%;
+        width: 45%;
+        margin-top: 30px;
+    }
+    div#profile {
+        padding: 10px;
+    }
+    #profile h2 {
+        font-size: 40px;
+    }
+    #profile h3 {
+        font-size: 18px;
+    }
+    #profile p {
+        font-size: 15px;
+    }
+    div#down {
+        width: 60%;
+    }
+    #down a.button.outline-inward {
+        margin-left: 20%;
+        width: 35%;
+        margin-top: 20px;
+    }
+    .social {
+        padding: 20px 0;
+    }
+    .social a {
+        font-size: 25px;
+    }
+    #loginBox {
+        right: 63px;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 550px;
+    }
+    .container>.navbar-collapse {
+        width: 100%;
+    }
+    .navbar-nav>li {
+        text-indent: 0;
+    }
+    .headphone {
+        top: -199px;
+    }
+    #loginpop a span {
+        margin-left: 0px;
+    }
+    .login-pop {
+        width: 100%;
+    }
+    a#loginButton {
+        width: 100%;
+    }
+    #loginBox {
+        right: 91px;
+    }
+}
+
+@media screen and (max-width:568px) {
+    h1 {
+        font-size: 57px;
+    }
+    .container {
+        width: 520px;
+    }
+    #heading h2 {
+        font-size: 65px;
+        padding-top: 10px;
+    }
+    .headphone {
+        top: -157px;
+        left: 130px;
+    }
+    .hover1 h2 {
+        font-size: 30px;
+    }
+    #profile h3 {
+        font-size: 17px;
+    }
+    div#down {
+        width: 65%;
+    }
+    #down h3 {
+        font-size: 38px;
+    }
+    #down a.button.outline-inward {
+        margin-left: 12%;
+    }
+    ul.icons {
+        margin: 30px 0 0;
+        -webkit-padding-start: 0;
+    }
+    ul.social li a {
+        width: 45px;
+        height: 45px;
+    }
+    .container>.navbar-collapse {
+        width: 100%;
+        text-indent: 0;
+    }
+    #loginBox {
+        right: 73px;
+        top: 60px;
+    }
+}
+
+@media screen and (max-width:533px) {
+    .container {
+        width: 485px;
+    }
+    .navbar-nav>li>a {
+        padding-top: 8px;
+        padding-bottom: 9px;
+    }
+    .nav>li>a {
+        padding: 10px 8px;
+    }
+    .banner {
+        height: 500px;
+    }
+    #heading h2 {
+        font-size: 60px;
+        padding-top: 0px;
+        margin-left: 0;
+    }
+    #heading span {
+        font-size: 35px;
+    }
+    #heading p {
+        font-size: 16px;
+        margin-left: 1%;
+    }
+    #heading .outline-inward {
+        margin-left: 12%;
+        width: 50%;
+        margin-top: 30px;
+    }
+    .headphone {
+        top: -246px;
+        left: 167px;
+        width: 65%;
+    }
+    .hover1 {
+        padding: 20px 5px 30px 5px;
+    }
+    .hover1 h2 {
+        font-size: 28px;
+    }
+    .hover1 a.button.outline-inward {
+        font-size: 18px;
+    }
+    div#down {
+        width: 75%;
+    }
+    #down h3 {
+        margin: 30px 0 20px 0px;
+        font-size: 40px;
+    }
+    #down p {
+        font-size: 16px;
+    }
+    #down a.button.outline-inward {
+        margin-left: 25%;
+    }
+    #profile p {
+        font-size: 14px;
+    }
+    #profile h2 {
+        font-size: 35px;
+    }
+    #profile h3 {
+        font-size: 16px;
+    }
+    #loginBox {
+        right: 58px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .container {
+        width: 432px;
+    }
+    .container>.navbar-collapse {
+        width: 100%;
+    }
+    #loginBox {
+        right: 30px;
+    }
+    #heading h2 {
+        font-size: 52px;
+    }
+    #heading p {
+        font-size: 16px;
+    }
+    .headphone {
+        top: -221px;
+        left: 125px;
+        width: 70%;
+    }
+    .hover1 {
+        padding: 20px 0px 40px 0px;
+    }
+    .hover1 h2 {
+        font-size: 26px;
+    }
+    .hover1 p {
+        font-size: 13px;
+    }
+    .about {
+        height: 750px;
+    }
+    div#profile {
+        padding: 6px;
+    }
+    #profile h3 {
+        font-size: 14px;
+    }
+    #profile p {
+        font-size: 13px;
+    }
+    #profile a {
+        font-size: 25px;
+    }
+    #down h3 {
+        margin: 40px 0 20px 0px;
+        font-size: 40px;
+    }
+    #down p {
+        font-size: 15px;
+    }
+    #down a.button.outline-inward {
+        width: 40%;
+    }
+    .copyright p {
+        font-size: 15px;
+    }
+    ul.icons li a {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background: url("/img/img-sprite.png") no-repeat 0px 0px;
+        background-size: 200px;
+    }
+    ul.icons li a.twt {
+        background-position: -34px 0px;
+    }
+    ul.icons li a.twt:hover {
+        background-position: -35px -34px;
+    }
+    ul.icons li a.gplus {
+        background-position: -68px 0px;
+    }
+    ul.icons li a.gplus:hover {
+        background-position: -68px -33px;
+    }
+    ul.social li a {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background: url("/img/img-sprite.png") no-repeat 0px 0px;
+        background-size: 200px;
+    }
+    ul.social li a.twitter {
+        background-position: -35px 0px;
+    }
+    ul.social li a.twitter:hover {
+        background-position: -34px -33px;
+    }
+    ul.social li a.googleplus {
+        background-position: -69px 0px;
+    }
+    ul.social li a.googleplus:hover {
+        background-position: -68px -34px;
+    }
+    ul.social li a.instagram {
+        background-position: -102px 0px;
+    }
+    ul.social li a.instagram:hover {
+        background-position: -102px -35px;
+    }
+    ul.social li a.youtube {
+        background-position: -135px 0px;
+    }
+    ul.social li a.youtube:hover {
+        background-position: -135px -33px;
+    }
+    ul.social li a.itunes {
+        background-position: -170px 0px;
+    }
+    ul.social li a.itunes:hover {
+        background-position: -170px -33px;
+    }
+    .downloads {
+        top: 6%;
+    }
+    div#download {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:414px) {
+    .container {
+        width: 367px;
+    }
+    .container>.navbar-collapse {
+        width: 100%;
+    }
+    #loginBox {
+        right: 3px;
+    }
+    #loginForm:after {
+        right: 132px;
+    }
+    #loginForm {
+        width: 285px;
+    }
+    #heading h2 {
+        font-size: 42px;
+        padding-top: 0px;
+        margin-bottom: 10px;
+    }
+    #heading span {
+        font-size: 32px;
+    }
+    #heading p {
+        font-size: 15px;
+        margin-top: 10px;
+    }
+    #heading .outline-inward {
+        margin-left: 0%;
+        width: 53%;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    .headphone {
+        top: -154px;
+        left: 90px;
+        width: 75%;
+    }
+    .hover1 {
+        left: 5px;
+        padding: 20px 0px;
+    }
+    .hover1 h2 {
+        font-size: 22px;
+    }
+    .hover1 p {
+        font-size: 12px;
+        margin-left: 8px;
+    }
+    .hover1 a.button.outline-inward {
+        font-size: 16px;
+    }
+    div#profile {
+        width: 47%;
+    }
+    #profile h2 {
+        font-size: 30px;
+    }
+    #profile h3 {
+        font-size: 14px;
+        margin: 10px 0;
+    }
+    #profile p {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    #profile a {
+        font-size: 20px;
+    }
+    ul.icons {
+        float: left;
+    }
+    div#down {
+        width: 80%;
+    }
+    #down h3 {
+        font-size: 35px;
+    }
+
+    .grid1, .grid2, .grid3, .grid4 {
+        width: 50%;
+    }
+
+    ul.icons li a {
+        background-size: 200px;
+    }
+    ul.icons li a.twt {
+        background-position: -35px 0px;
+    }
+    ul.icons li a.gplus {
+        background-position: -70px 0px;
+    }
+    ul.social li a {
+        background-size: 200px;
+    }
+    ul.social li a.twitter {
+        background-position: -34px 0px;
+    }
+    ul.social li a.googleplus {
+        background-position: -68px 0px;
+    }
+    ul.social li a.instagram {
+        background-position: -100px 0px;
+    }
+    ul.social li a.youtube {
+        background-position: -135px 0px;
+    }
+    ul.social li a.itunes {
+        background-position: -170px 0px;
+    }
+    .copyright p {
+        font-size: 15px;
+        line-height: 28px;
+    }
+}
+
+@media screen and (max-width:384px) {
+    .container {
+        width: 335px;
+    }
+    .container>.navbar-collapse {
+        width: 100%;
+    }
+    #loginBox {
+        right: -4px;
+    }
+    #loginForm {
+        width: 265px;
+    }
+    #loginForm:after {
+        right: 123px;
+    }
+    #heading h2 {
+        font-size: 39px;
+    }
+    #heading span {
+        font-size: 30px;
+    }
+    .headphone {
+        top: -160px;
+        left: 80px;
+        width: 75%;
+    }
+    .hover1 {
+        width: 96%;
+    }
+    .hover1 h2 {
+        font-size: 20px;
+    }
+    div#profile {
+        left: 0;
+        width: 95%;
+        top: 200px;
+    }
+    div#down {
+        width: 100%;
+        top: 180px;
+    }
+    #down h3 {
+        font-size: 30px;
+        margin: 40px 0 10px 0px;
+    }
+    #down p {
+        font-size: 14px;
+    }
+    #down a.button.outline-inward {
+        margin-left: 32%;
+        margin-top: 10px;
+    }
+    div#download {
+        width: 90%;
+    }
+
+    ul.icons {
+        margin: 30px 0 0 13px;
+    }
+    ul.icons li a {
+        background-size: 180px;
+    }
+    ul.icons li a.twt {
+        background-position: -30px 0px;
+    }
+    ul.icons li a.twt:hover {
+        background-position: -30px -30px;
+    }
+    ul.icons li a.gplus {
+        background-position: -58px 0px;
+    }
+    ul.icons li a.gplus:hover {
+        background-position: -61px -31px;
+    }
+    ul.social li a {
+        background-size: 200px;
+    }
+    ul.social li a.twitter {
+        background-position: -34px 0px;
+    }
+    ul.social li a.googleplus {
+        background-position: -68px 0px;
+    }
+    ul.social li a.instagram {
+        background-position: -100px 0px;
+    }
+    ul.social li a.youtube {
+        background-position: -135px 0px;
+    }
+    ul.social li a.itunes {
+        background-position: -170px 0px;
+    }
+
+    .grid1 {
+        width: 50%;
+    }
+    .grid2 {
+        width: 50%;
+    }
+    .grid3 {
+        width: 50%;
+    }
+    .grid4 {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .container {
+        width: 328px;
+    }
+    #loginBox {
+        right: -7px;
+    }
+    #loginForm {
+        width: 260px;
+    }
+    h1 {
+        font-size: 60px;
+    }
+    .para {
+        width: 94%;
+    }
+    .headphone {
+        top: -153px;
+    }
+    ul.icons {
+        margin: 30px 0 0 0px;
+    }
+    ul.icons li a {
+        background-size: 180px;
+    }
+    ul.icons li a.twt {
+        background-position: -30px 0px;
+    }
+    ul.icons li a.gplus {
+        background-position: -58px 0px;
+    }
+    ul.social li a {
+        background-size: 200px;
+    }
+    ul.social li a.twitter {
+        background-position: -34px 0px;
+    }
+    ul.social li a.googleplus {
+        background-position: -68px 0px;
+    }
+    ul.social li a.instagram {
+        background-position: -100px 0px;
+    }
+    ul.social li a.youtube {
+        background-position: -135px 0px;
+    }
+    ul.social li a.itunes {
+        background-position: -170px 0px;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .container {
+        width: 313px;
+    }
+    .container>.navbar-collapse {
+        width: 100%;
+    }
+    #loginBox {
+        right: -9px;
+    }
+    #loginForm {
+        width: 250px;
+    }
+    #loginForm:after {
+        right: 115px;
+    }
+    #heading h2 {
+        font-size: 35px;
+    }
+    #heading span {
+        font-size: 27px;
+    }
+    #heading p {
+        font-size: 14px;
+    }
+    .headphone {
+        top: -125px;
+        left: 85px;
+    }
+    .hover1 h2 {
+        font-size: 18px;
+    }
+    .hover1 p {
+        margin-left: 3px;
+    }
+    .hover1 a.button.outline-inward {
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    div#down {
+        width: 100%;
+    }
+    #down h3 {
+        font-size: 27px;
+    }
+    #down p {
+        padding: 0;
+    }
+    #download h3 {
+        font-size: 24px;
+    }
+    .appstore, .playstore, .msstore {
+        width: 17%;
+        margin-right: 20px;
+    }
+    ul.icons {
+        margin: 30px 0 0 10px;
+    }
+    ul.icons li a {
+        background-size: 180px;
+    }
+    ul.icons li a.twt {
+        background-position: -30px 0px;
+    }
+    ul.icons li a.gplus {
+        background-position: -58px 0px;
+    }
+    ul.social li a {
+        background-size: 200px;
+    }
+    ul.social li a.twitter {
+        background-position: -34px 0px;
+    }
+    ul.social li a.googleplus {
+        background-position: -68px 0px;
+    }
+    ul.social li a.instagram {
+        background-position: -100px 0px;
+    }
+    ul.social li a.youtube {
+        background-position: -135px 0px;
+    }
+    ul.social li a.itunes {
+        background-position: -170px 0px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    h1 {
+        padding-top: 30px;
+        margin-bottom: 30px;
+        font-size: 45px;
+    }
+    .container {
+        width: 273px;
+        padding: 0;
+    }
+    .container>.navbar-collapse {
+        width: 100%;
+    }
+    .navbar-toggle {
+        padding: 7px;
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #FFF;
+    }
+    .container>.navbar-collapse, .container>.navbar-header {
+        margin-right: 0px;
+    }
+    #loginForm {
+        width: 245px;
+    }
+    #loginForm:after {
+        right: 110px;
+    }
+    div#heading {
+        width: 100%;
+    }
+    #heading h2 {
+        font-size: 35px;
+    }
+    #heading span {
+        font-size: 26px;
+    }
+    #heading p {
+        font-size: 16px;
+        margin-top: 10px;
+        color: #12ffb9;
+    }
+
+    #heading .outline-inward {
+        margin-left: 0%;
+        width: 30%;
+    }
+    .headphone {
+        top: -65px;
+        left: 70px;
+        width: 75%;
+    }
+    .about {
+        height: 770px;
+    }
+    .hover1 {
+        width: 80%;
+        left: 27px;
+    }
+
+    .hover1 h2 {
+        font-size: 25px;
+    }
+    div ul li label {
+        margin-left: 11px;
+        color: #12ffb9;
+    }
+    div#profile {
+        top: 210px;
+        width: 80%;
+    }
+    ul.icons {
+        margin: 10px 0 0 35px;
+    }
+    div#down {
+        width: 100%;
+        top: 170px;
+    }
+    #down h3 {
+        margin: 50px 0 10px 0px;
+        font-size: 30px;
+    }
+    #down p {
+        font-size: 14px;
+        padding: 0 1px;
+    }
+    .downloads {
+        top: 22%;
+    }
+    #download h3 {
+        font-size: 19px;
+        padding: 30px 0 10px 0;
+    }
+    #download p {
+        font-size: 15px;
+    }
+
+    li span {
+        font-size: 25px;
+    }
+    .copyright {
+        padding: 0 0 15px 0;
+    }
+    .social {
+        padding: 15px 0;
+    }
+    .copyright p {
+        font-size: 14px;
+    }
+    ul.social li a {
+        background-size: 200px;
+    }
+    ul.social li a.twitter {
+        background-position: -34px 0px;
+    }
+    ul.social li a.googleplus {
+        background-position: -68px 0px;
+    }
+    ul.social li a.instagram {
+        background-position: -100px 0px;
+    }
+    ul.social li a.youtube {
+        background-position: -135px 0px;
+    }
+    ul.social li a.itunes {
+        background-position: -170px 0px;
+    }
+}

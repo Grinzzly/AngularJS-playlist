@@ -1,2 +1,2 @@
-# ChalangeTask
-Chalange from Klika Tech
+# ChallengeTask
+Challenge from Klika Tech

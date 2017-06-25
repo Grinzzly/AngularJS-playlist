@@ -92,44 +92,42 @@
 								</div>
 							</div>
 
-
-						<div class="col-md-5" id="profile">
+						<!--<a name="add"></a>-->
+						<div class="col-md-5" id="profile" id="add">
 							<h2>Add New Song</h2>
-							<div class="container">
 								<ul>
 									<li>
 										<label for="singer">Singer</label>
 										<br>
-										<input type="text" class="shorter form-control" ng-model="songInfo.singer" required>
+										<input type="text" class="form-control" ng-model="songInfo.singer" required>
 									</li>
 									<br>
 									<li>
 										<label for="song">Song</label>
 										<br>
-										<input type="text" class="shorter form-control" ng-model="songInfo.song" required>
+										<input type="text" class="form-control" ng-model="songInfo.song" required>
 									</li>
 									<br>
 									<li>
 										<label for="genre">Genre</label>
 										<br>
-										<input type="text" class="shorter form-control" ng-model="songInfo.genre" required>
+										<input type="text" class="form-control" ng-model="songInfo.genre" required>
 									</li>
 									<br>
 									<li>
 										<label for="year">Year</label>
 										<br>
-										<input type="number" class="shorter form-control" ng-minlength="0" ng-maxlength="2017" ng-model="songInfo.year">
+										<input type="number" class="form-control" ng-minlength="0" ng-maxlength="2017" ng-model="songInfo.year">
 									</li>
 									<br>
 									<li class="adding">
-										<a href="#" class="add button outline-inward" ng-click="addMusic(songInfo)">ADD</a>
+										<a class="add button outline-inward" ng-click="addMusic(songInfo)">ADD</a>
 										<!--<button class= "btn btn-default" ng-click="addMusic(songInfo)">
 											<i class="fa fa-plus" aria-hidden="true"></i>
 											Add
 										</button>-->
 									</li>
 								</ul>
-							</div>
 						</div>
 						<!--<div class="clearfix"></div>-->
 					</div>
@@ -151,16 +149,16 @@
 							<div class="row">
 								<div class="pageNumber">
 									<nav class="pagination">
-										<a href="#" aria-label="Previous" ng-click="previousPage(actualPage - 1)" ng-disabled="actualPage == 0" class="prev">&lt;</a>
-										<a href="#" ng-repeat="i in pages(pageNumbers) track by $index" ng-click="setPageNum($index)" ng-bind="$index + 1" ng-class="{active: actualPage == $index }"></a>
-										<a href="#" aria-label="Next" ng-click="nextPage(actualPage + 1)" ng-disabled="actualPage >= (oldMusic.length/pageSize - 1)" class="next">&gt;</a>
+										<a aria-label="Previous" ng-click="previousPage(actualPage - 1)" ng-disabled="actualPage == 0" class="prev">&lt;</a>
+										<a ng-repeat="i in pages(pageNumbers) track by $index" ng-click="setPageNum($index)" ng-bind="$index + 1" ng-class="{active: actualPage == $index }"></a>
+										<a aria-label="Next" ng-click="nextPage(actualPage + 1)" ng-disabled="actualPage >= (oldMusic.length/pageSize - 1)" class="next">&gt;</a>
 									</nav>
 									<div class="resultsPerPage pull-right">
 										<nav class="pagination">
 											<a ng-class="{active: pageSize==10}" ng-click="setResults(10)">10</a>
 											<a ng-class="{active: pageSize==25}" ng-click="setResults(25)">25</a>
-											<a href="#" ng-class="{active: pageSize==50}" ng-click="setResults(50)">50</a>
-											<a href="#" ng-class="{active: pageSize==100}" ng-click="setResults(100)">100</a>
+											<a ng-class="{active: pageSize==50}" ng-click="setResults(50)">50</a>
+											<a ng-class="{active: pageSize==100}" ng-click="setResults(100)">100</a>
 										</nav>
 									</div>
 								</div>
@@ -172,7 +170,6 @@
 
 
 			<div class="footer">
-
 				<ul class="social" id="follow">
 					<li><a href="#" class="facebook" title="Go to Our Facebook Page"></a></li>
 					<li><a href="#" class="twitter" title="Go to Our Twitter Account"></a></li>

@@ -42,8 +42,10 @@ select {
     cursor : pointer;
     border-right : 1px solid maroon;
     border-bottom : 1px solid maroon;
-    font-size: 16px;
+    /*font-size: 1.2vw;*/
+    font-size : 16px;
     display: table-cell;
+    overflow: hidden;
 }
 
 .data-info div {
@@ -54,8 +56,10 @@ select {
     color: white;
     border-right: 1px solid maroon;
     border-bottom: 1px solid maroon;
-    font-size: 14px;
+    /*font-size: 0.8vw;*/
+    font-size : 14px;
     display: table-cell;
+    overflow: hidden;
 }
 
 .data-menu i {margin:0px 0px 0px 5px; line-height: 30px; }
@@ -450,6 +454,10 @@ div.container>ul>li>a {
     font-family: 'Oswald-Light';
 }
 
+.adding {
+    text-align: center;
+}
+
 .adding a.button.outline-inward {
     margin: 0;
     padding : 10px 0 10px 0;
@@ -508,9 +516,7 @@ div.container>ul>li>a {
 img {
     width: 100%;
 }
-.shorter {
-    width: 30%;
-}
+
 .about {
     background: url("/img/music.jpg");
     background-repeat: no-repeat;

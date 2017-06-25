@@ -96,77 +96,92 @@
 
 								<div class="col-md-5" id="profile">
 									<h2>Add New Song</h2>
-									<ul>
-										<li>
-											<label for="singer">Singer</label>
+									<form name ="addForm" novalidate>
+										<ul>
+											<li>
+												<label for="singer">Singer</label>
+												<br>
+												<input name = "Singer"
+                                                       type="text"
+                                                       class="form-control"
+                                                       ng-model="songInfo.singer">
+                                                <div class="row">
+                                                    <div class="col-xs-3"></div>
+                                                        <div ng-show = "signUpForm.email.$error.required" class="alert alert-danger col-xs-9">
+                                                            Singer is required.
+                                                        </div>
+                                                </div>
+											</li>
 											<br>
-											<input type="text" class="form-control" ng-model="songInfo.singer" required>
-										</li>
-										<br>
-										<li>
-											<label for="song">Song</label>
+											<li>
+												<label for="song">Song</label>
+												<br>
+												<input name = "Song" type="text" class="form-control" ng-model="songInfo.song" required>
+											</li>
 											<br>
-											<input type="text" class="form-control" ng-model="songInfo.song" required>
-										</li>
-										<br>
-										<li>
-											<label for="genre">Genre</label>
+											<li>
+												<label for="genre">Genre</label>
+												<br>
+												<input name = "Genre" type="text" class="form-control" ng-model="songInfo.genre" required>
+											</li>
 											<br>
-											<input type="text" class="form-control" ng-model="songInfo.genre" required>
-										</li>
-										<br>
-										<li>
-											<label for="year">Year</label>
+											<li>
+												<label for="year">Year</label>
+												<br>
+												<input name = "Year"
+                                                       type="number"
+                                                       class="form-control"
+                                                       ng-minlength="0"
+                                                       ng-maxlength="2017"
+                                                       ng-model="songInfo.year">
+											</li>
 											<br>
-											<input type="number" class="form-control" ng-minlength="0" ng-maxlength="2017" ng-model="songInfo.year">
-										</li>
-										<br>
-										<li class="adding">
-											<a class="add button outline-inward" ng-click="addMusic(songInfo)">ADD</a>
-										</li>
-									</ul>
+											<li class="adding">
+												<a class="add button outline-inward" ng-click="addMusic(songInfo)">ADD</a>
+											</li>
+										</ul>
+									</form>
 								</div>
 							</div>
 						</div>
 
 						<div id="Table">
-						<div class="col-md-12">
-							<div class="data-menu">
-								<div class="singer" ng-click="orderByType('singer')">SINGER <i class="fa fa-caret-down" aria-hidden="true"></i></div>
-								<div class="song"  ng-click="orderByType('song')">SONG <i class="fa fa-caret-down" aria-hidden="true"></i></div>
-								<div class="genre" ng-click="orderByType('genre')">GENRE <i class="fa fa-caret-down" aria-hidden="true"></i></div>
-								<div class="year" ng-click="orderByType('year')">YEAR <i class="fa fa-caret-down" aria-hidden="true"></i></div>
-							</div>
-							<div class="data-info" ng-repeat="music in newMusic" ng-if="$index < pageSize">
-								<div class="singer" ng-bind="music.singer"></div>
-								<div class="song" ng-bind="music.song"></div>
-								<div class="genre" ng-bind="music.genre"></div>
-								<div class="year" ng-bind="music.year"></div>
-							</div>
-							<div class="row">
-								<div class="pageNumber">
-									<nav class="pagination">
-										<a aria-label="Previous" ng-click="previousPage(actualPage - 1)" ng-disabled="actualPage == 0" class="prev">&lt;</a>
-										<a ng-repeat="i in pages(pageNumbers) track by $index" ng-click="setPageNum($index)" ng-bind="$index + 1" ng-class="{active: actualPage == $index }"></a>
-										<a aria-label="Next" ng-click="nextPage(actualPage + 1)" ng-disabled="actualPage >= (oldMusic.length/pageSize - 1)" class="next">&gt;</a>
-									</nav>
-									<div class="resultsPerPage pull-right">
+							<div class="col-md-12">
+								<div class="data-menu">
+									<div class="singer" ng-click="orderByType('singer')">SINGER <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+									<div class="song"  ng-click="orderByType('song')">SONG <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+									<div class="genre" ng-click="orderByType('genre')">GENRE <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+									<div class="year" ng-click="orderByType('year')">YEAR <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+								</div>
+								<div class="data-info" ng-repeat="music in newMusic" ng-if="$index < pageSize">
+									<div class="singer" ng-bind="music.singer"></div>
+									<div class="song" ng-bind="music.song"></div>
+									<div class="genre" ng-bind="music.genre"></div>
+									<div class="year" ng-bind="music.year"></div>
+								</div>
+								<div class="row">
+									<div class="pageNumber">
 										<nav class="pagination">
-											<a ng-class="{active: pageSize==10}" ng-click="setResults(10)">10</a>
-											<a ng-class="{active: pageSize==25}" ng-click="setResults(25)">25</a>
-											<a ng-class="{active: pageSize==50}" ng-click="setResults(50)">50</a>
-											<a ng-class="{active: pageSize==100}" ng-click="setResults(100)">100</a>
+											<a aria-label="Previous" ng-click="previousPage(actualPage - 1)" ng-disabled="actualPage == 0" class="prev">&lt;</a>
+											<a ng-repeat="i in pages(pageNumbers) track by $index" ng-click="setPageNum($index)" ng-bind="$index + 1" ng-class="{active: actualPage == $index }"></a>
+											<a aria-label="Next" ng-click="nextPage(actualPage + 1)" ng-disabled="actualPage >= (oldMusic.length/pageSize - 1)" class="next">&gt;</a>
 										</nav>
+										<div class="resultsPerPage pull-right">
+											<nav class="pagination">
+												<a id="five" ng-class="{active: pageSize==5}" ng-click="setResults(5)">5</a>
+												<a ng-class="{active: pageSize==10}" ng-click="setResults(10)">10</a>
+												<a ng-class="{active: pageSize==25}" ng-click="setResults(25)">25</a>
+												<a ng-class="{active: pageSize==50}" ng-click="setResults(50)">50</a>
+												<a ng-class="{active: pageSize==100}" ng-click="setResults(100)">100</a>
+											</nav>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						</div>
-
+					</div>
 				</div>
 			</div>
-
-
 			<div class="footer">
 				<ul class="social" id="follow">
 					<li><a href="#" class="facebook" title="Go to Our Facebook Page"></a></li>
@@ -188,11 +203,10 @@
 				</script>
 
 				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-
 			</div>
 		</div>
 	</div>
-	</div>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="/js/modules/NgMusic.js"></script>

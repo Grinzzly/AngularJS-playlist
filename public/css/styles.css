@@ -10,7 +10,7 @@ body#main-body * {
 
 ul {
     list-style: none;
-    padding: 0px}
+    padding: 0px;
 }
 
 select {
@@ -73,11 +73,9 @@ select {
     border : 1px solid #666;
     color:white;
 }
-
-/*.resultsPerPage {
-    margin : 20px 0px 20px 0px;
-}*/
-
+#five{
+    display: none;
+}
 .pageNumber {
     margin : 0px 20px 0px 20px;
 }
@@ -591,6 +589,9 @@ ul.social li a.itunes:hover {
 }
 
 @media screen and (max-width:991px) {
+    .resultsPerPage{
+        display: none;
+    }
     .navbar-nav>li {
         margin: 0 20px;
     }
@@ -625,13 +626,21 @@ ul.social li a.itunes:hover {
     div#profile {
         width: 50%;
         float: right;
-        padding: 20px 0 50px 35px;
+        padding: 20px 40px 0px 80px;
+
+    }
+    #Table {
+        margin-top: 40px;
     }
 }
 
 @media screen and (max-width:966px) {
     div#heading {
         width: 50%;
+    }
+
+    div#profile {
+        padding: 20px 40px 0px 40px;
     }
     #heading h2 {
         margin-left: 0;
@@ -662,7 +671,6 @@ ul.social li a.itunes:hover {
         font-size: 39px;
     }
     div#profile {
-        padding: 10px 20px 50px;
         width: 50%;
         left: 15px;
     }
@@ -1107,16 +1115,16 @@ ul.social li a.itunes:hover {
         height: 750px;
     }
     div#profile {
-        padding: 180px 50px 0px 50px;
+        padding: 20px 50px 0px 50px;
     }
 
     #Table {
-        margin-top: 320px;
+        margin-top: 60px;
     }
     #hover #Playlist {
         position: absolute;
-        margin-left: 25%;
-        bottom: -920px;
+        margin-left: 15%;
+        bottom: -520px;
     }
     #profile h3 {
         font-size: 14px;
@@ -1235,6 +1243,7 @@ ul.social li a.itunes:hover {
     }
     div#profile {
         width: 47%;
+        padding-top: 20px;
     }
     #profile h2 {
         font-size: 30px;
@@ -1318,7 +1327,7 @@ ul.social li a.itunes:hover {
     div#profile {
         left: 0;
         width: 95%;
-        top: 200px;
+        padding-top: 20px;
     }
 
     ul.icons {
@@ -1376,6 +1385,9 @@ ul.social li a.itunes:hover {
     .container {
         width: 328px;
     }
+    div#profile {
+        padding-top: 20px;
+    }
     h1 {
         font-size: 60px;
     }
@@ -1420,6 +1432,9 @@ ul.social li a.itunes:hover {
 @media screen and (max-width:360px) {
     .container {
         width: 313px;
+    }
+    div#profile {
+        padding-top: 20px;
     }
     .container>.navbar-collapse {
         width: 100%;
@@ -1544,6 +1559,7 @@ ul.social li a.itunes:hover {
     div#profile {
         top: 210px;
         width: 80%;
+        padding-top: 20px;
     }
     ul.icons {
         margin: 10px 0 0 35px;

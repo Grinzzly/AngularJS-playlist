@@ -100,19 +100,19 @@
 									<li>
 										<label for="singer">Singer</label>
 										<br>
-										<input type="text" class="shorter form-control" ng-model="songInfo.singer">
+										<input type="text" class="shorter form-control" ng-model="songInfo.singer" required>
 									</li>
 									<br>
 									<li>
 										<label for="song">Song</label>
 										<br>
-										<input type="text" class="shorter form-control" ng-model="songInfo.song">
+										<input type="text" class="shorter form-control" ng-model="songInfo.song" required>
 									</li>
 									<br>
 									<li>
 										<label for="genre">Genre</label>
 										<br>
-										<input type="text" class="shorter form-control" ng-model="songInfo.genre">
+										<input type="text" class="shorter form-control" ng-model="songInfo.genre" required>
 									</li>
 									<br>
 									<li>
@@ -131,11 +131,11 @@
 								</ul>
 							</div>
 						</div>
-						<div class="clearfix"></div>
+						<!--<div class="clearfix"></div>-->
 					</div>
 
 
-						<div class="col-md-12" id="down">
+						<div class="col-md-12">
 							<div class="data-menu">
 								<div class="singer" ng-click="orderByType('singer')">SINGER <i class="fa fa-caret-down" aria-hidden="true"></i></div>
 								<div class="song"  ng-click="orderByType('song')">SONG <i class="fa fa-caret-down" aria-hidden="true"></i></div>
@@ -157,8 +157,8 @@
 									</nav>
 									<div class="resultsPerPage pull-right">
 										<nav class="pagination">
-											<a href="#" ng-class="{active: pageSize==10}" ng-click="setResults(10)">10</a>
-											<a href="#" ng-class="{active: pageSize==25}" ng-click="setResults(25)">25</a>
+											<a ng-class="{active: pageSize==10}" ng-click="setResults(10)">10</a>
+											<a ng-class="{active: pageSize==25}" ng-click="setResults(25)">25</a>
 											<a href="#" ng-class="{active: pageSize==50}" ng-click="setResults(50)">50</a>
 											<a href="#" ng-class="{active: pageSize==100}" ng-click="setResults(100)">100</a>
 										</nav>

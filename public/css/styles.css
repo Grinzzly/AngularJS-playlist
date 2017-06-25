@@ -1,4 +1,17 @@
-ul {list-style: none; padding: 0px}
+body {
+    padding:0;
+    margin:0;
+    background:#FFF;
+}
+
+body#main-body * {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    padding: 0px}
+}
 
 select {
     height: 30px;
@@ -57,9 +70,9 @@ select {
     color:white;
 }
 
-.resultsPerPage {
+/*.resultsPerPage {
     margin : 20px 0px 20px 0px;
-}
+}*/
 
 .pageNumber {
     margin : 0px 20px 0px 20px;
@@ -164,7 +177,8 @@ h1 {
 }
 .navbar-nav>li {
     float: left;
-    margin: 0 46px;
+    text-align: center;
+    width: 25%;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
@@ -424,6 +438,23 @@ a.signup {
     margin-left: 105px;
 }
 
+div.container>ul>li>a {
+    text-align: center;
+    vertical-align: middle;
+    border: 1px white solid;
+    padding: 1em;
+    color: white;
+    display: block;
+    width: 30%;
+    font-weight: bold;
+    font-family: 'Oswald-Light';
+}
+
+.adding a.button.outline-inward {
+    margin: 0;
+    padding : 10px 0 10px 0;
+}
+
 .outline-inward {
     display: inline-block;
     position: relative;
@@ -513,10 +544,6 @@ div#hover {
     color: white;
 }
 
-.adding a.button.outline-inward {
-    margin-left: 33%;
-}
-
 div#profile {
     padding: 35px 100px 80px 0px;
     color : white;
@@ -526,6 +553,7 @@ div#profile {
     font-family: 'candara';
     font-weight: bold;
     color: #12FFB9;
+    padding : 6%;
 }
 
 ul.icons {
@@ -1365,9 +1393,6 @@ ul.social li a.itunes:hover {
     }
     #profile h2 {
         font-size: 35px;
-    }
-    #profile h3 {
-        font-size: 16px;
     }
     #loginBox {
         right: 58px;

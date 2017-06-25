@@ -31,6 +31,8 @@ select {
 .data-menu, .data-info {
     width: 100%;
     display: table;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .data-menu div {
@@ -45,7 +47,6 @@ select {
     /*font-size: 1.2vw;*/
     font-size : 16px;
     display: table-cell;
-    overflow: hidden;
 }
 
 .data-info div {
@@ -59,7 +60,6 @@ select {
     /*font-size: 0.8vw;*/
     font-size : 14px;
     display: table-cell;
-    overflow: hidden;
 }
 
 .data-menu i {margin:0px 0px 0px 5px; line-height: 30px; }
@@ -716,7 +716,7 @@ ul.social li a.itunes:hover {
         width: 90%;
     }
     div#profile {
-        padding: 20px 10px;
+        padding: 20px 50px 0px 50px;
         width: 50%;
     }
     .headphone {
@@ -797,7 +797,7 @@ ul.social li a.itunes:hover {
         font-size: 40px;
     }
     div#profile {
-        padding: 15px 10px;
+        padding: 20px 50px 0px 50px;
     }
     #profile h3 {
         font-size: 23px;
@@ -875,8 +875,7 @@ ul.social li a.itunes:hover {
         font-size: 35px;
     }
     div#profile {
-        padding: 10px 15px;
-    }
+        padding: 20px 50px 0px 50px;
     #profile h2 {
         font-size: 40px;
     }
@@ -951,7 +950,7 @@ ul.social li a.itunes:hover {
         margin-top: 30px;
     }
     div#profile {
-        padding: 10px;
+        padding: 20px 50px 0px 50px;
     }
     #profile h2 {
         font-size: 40px;
@@ -1094,8 +1093,9 @@ ul.social li a.itunes:hover {
         left: 125px;
         width: 70%;
     }
-    .hover1 {
-        padding: 20px 0px 40px 0px;
+    div.hover1 {
+        padding: 40px 30px 60px 30px;
+        margin-left: 0px;
     }
     .hover1 h2 {
         font-size: 26px;
@@ -1107,7 +1107,16 @@ ul.social li a.itunes:hover {
         height: 750px;
     }
     div#profile {
-        padding: 6px;
+        padding: 180px 50px 0px 50px;
+    }
+
+    #Table {
+        margin-top: 320px;
+    }
+    #hover #Playlist {
+        position: absolute;
+        margin-left: 25%;
+        bottom: -920px;
     }
     #profile h3 {
         font-size: 14px;

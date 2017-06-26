@@ -73,7 +73,7 @@ select {
     border : 1px solid #666;
     color:white;
 }
-#five{
+#five,#three{
     display: none;
 }
 .pageNumber {
@@ -563,44 +563,14 @@ ul.social li a.itunes:hover {
 }
 
 @media screen and (max-width:1024px) {
-    .navbar-nav>li {
-        float: left;
-        margin: 0 30px;
-    }
-    #heading h2 {
-        margin-left: 23px;
-    }
-    #heading span {
-        margin-left: 10%;
-    }
-    #heading p {
-        margin-left: 10%;
-    }
     .headphone {
         top: 47px;
         width: 80%;
     }
-    .hover1 {
-        padding: 50px 25px;
-    }
-    .about {
-        height: 911px;
-    }
 }
 
 @media screen and (max-width:991px) {
-    .resultsPerPage{
-        display: none;
-    }
-    .navbar-nav>li {
-        margin: 0 20px;
-    }
-    .navbar-default .navbar-nav>li>a {
-        font-size: 15px;
-        padding: 10px 10px;
-    }
-
-    #heading span {
+        #heading span {
         margin-left: 4%;
     }
     .para {
@@ -742,8 +712,13 @@ ul.social li a.itunes:hover {
     .container {
         width: 720px;
     }
+    .resultsPerPage{
+        display: none;
+    }
     .navbar-nav>li {
-        margin: 0 18px;
+        float: none;
+        margin: 0 0;
+        width: 100%;
     }
     #heading h2 {
         padding-top: 45px;
@@ -821,6 +796,8 @@ ul.social li a.itunes:hover {
     }
     .navbar-nav>li {
         margin: 0 4px;
+        text-align: center;
+        width: 100%;
     }
     #heading h2 {
         padding-top: 20px;
@@ -1087,6 +1064,9 @@ ul.social li a.itunes:hover {
     .container {
         width: 432px;
     }
+    .add{
+        font-size:12px;
+    }
     .container>.navbar-collapse {
         width: 100%;
     }
@@ -1115,7 +1095,7 @@ ul.social li a.itunes:hover {
         height: 750px;
     }
     div#profile {
-        padding: 20px 50px 0px 50px;
+        padding: 0px 50px 0px 50px;
     }
 
     #Table {

@@ -1,3 +1,19 @@
+;(()=> {
+var reSize = function () {
+    var size = $(window).width();
+    if ((size <= 768) && (size > 480)) {
+        $('a[id=five]').trigger('click');
+    } else if(size <= 480){
+        $('a[id=three]').trigger('click');
+    }else {
+        $('a[id=ten]').trigger('click');
+    }
+};
+
+$(document).ready(function() {
+    reSize();
+});
+
 $('a[name=add]').click(function () {
     if ($('input[name=Singer]').val() == '') {
         new Noty({
@@ -104,12 +120,6 @@ $('a[name=add]').click(function () {
 });
 
 $( window ).resize(function() {
-    var size = $(window).width();
-    if ((size <= 768) && (size > 480)) {
-        $('a[id=five]').trigger('click');
-    } else if(size <= 480){
-        $('a[id=three]').trigger('click');
-    }else {
-        $('a[id=ten]').trigger('click');
-    }
+    reSize();
 });
+})();

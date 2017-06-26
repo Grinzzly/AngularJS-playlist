@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>MusicApp</title>
+
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/styles.css" rel="stylesheet" type="text/css">
 	<link href="/css/paginator.css" rel="stylesheet">
@@ -20,12 +21,18 @@
 	</script>
     
 </head>
+
 <body ng-app="klika_tech" id="main-body">
+
 <div id="grad1">
 	<a href="#"><h1>Music App Challenge</h1></a>
 	<div class="page">
 		<div class="container">
+
+			<!-- Banner starts -->
 			<div class="banner">
+
+				<!-- Navbar starts -->
 				<nav class="navbar navbar-default">
 					<div class="container">
 						<div class="navbar-header">
@@ -42,10 +49,12 @@
 								<li><a rel="shadow-radial" class="button shadow-radial scroll" href="#hower">Playlist</a></li>
 								<li><a rel="shadow-radial" class="button shadow-radial scroll" href="#follow">Follow</a></li>
 							</ul>
-							</div>
+						</div>
 						<div class="clearfix"></div>
 					</div>
 				</nav>
+				<!-- Navbar ends -->
+
 				<div class="col-md-4" id="heading">
 					<h2>MUSIC</h2>
 					<span>by Grinzzly</span>
@@ -60,12 +69,20 @@
 					</div>
 				</div>
 			</div>
+			<!-- Banner ends -->
 
+			<!-- AngularJS controller starts -->
 			<div ng-controller="mainCtrl">
+
+				<!-- Content section starts -->
 				<div class="content">
 					<div class="about">
+
+						<!-- Top block (above playlist) starts -->
 						<div class="top">
 							<div class="row">
+
+								<!-- Filter starts -->
 								<div class="col-md-7" id="hover">
 									<div class="hover1">
 										<h2>Filter</h2>
@@ -93,7 +110,9 @@
 									</div>
 									<h2 id="Playlist">Playlist</h2>
 								</div>
+								<!-- Filter ends -->
 
+								<!-- Addin block starts -->
 								<div class="col-md-5" id="profile">
 									<h2>Add New Song</h2>
 									<form name ="addForm" novalidate>
@@ -142,11 +161,17 @@
 										</ul>
 									</form>
 								</div>
+								<!-- Adding block ends -->
+
 							</div>
 						</div>
-
+						<!-- Top block (above playlist) ends -->
+						
+						<!-- Playlist section starts -->
 						<div id="Table">
 							<div class="col-md-12">
+
+								<!-- Table starts -->
 								<div class="data-menu">
 									<div class="singer" ng-click="orderByType('singer')">SINGER <i class="fa fa-caret-down" aria-hidden="true"></i></div>
 									<div class="song"  ng-click="orderByType('song')">SONG <i class="fa fa-caret-down" aria-hidden="true"></i></div>
@@ -159,6 +184,9 @@
 									<div class="genre" ng-bind="music.genre"></div>
 									<div class="year" ng-bind="music.year"></div>
 								</div>
+								<!-- Table ends -->
+
+								<!-- Paginator starts -->
 								<div class="row">
 									<div class="pageNumber">
 										<nav class="pagination">
@@ -177,11 +205,20 @@
 										</div>
 									</div>
 								</div>
+								<!-- Paginator ends -->
+
 							</div>
 						</div>
+						<!-- Playlist section ends -->
+
 					</div>
 				</div>
+				<!-- Content section ends -->
+
 			</div>
+			<!-- AngularJS controller ends -->
+			
+			<!-- Footer starts -->
 			<div class="footer">
 				<ul class="social" id="follow">
 					<li><a href="#" class="facebook" title="Go to Our Facebook Page"></a></li>
@@ -196,6 +233,7 @@
 					<p>&copy; 2017 MusicApp Challenge from KlikaTech | Made by <a href="https://github.com/Grinzzly"> Grinzzly</a></p>
 				</div>
 
+				<!-- inline script for smooth lifting -->
 				<script type="text/javascript">
                     $(document).ready(function() {
                         $().UItoTop({ easingType: 'easeOutQuart' });
@@ -204,9 +242,15 @@
 
 				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 			</div>
+			<!-- Footer ends -->
+
 		</div>
 	</div>
+	<!-- Page ends -->
+
 </div>
+<!-- Gradient ends -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="/js/modules/NgMusic.js"></script>
@@ -214,5 +258,6 @@
 <script type="text/javascript" src="/js/move-top.js"></script>
 <script type="text/javascript" src="/js/easing.js"></script>
 <script src="/js/services/services.js"></script>
+
 </body>
 </html>

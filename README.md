@@ -6,9 +6,9 @@
   </a>
 </div>
 
-# About
+## About
 
-Challenge from Klika Tech. You could observe result <a href="https://stark-oasis-58039.herokuapp.com/" target="_blank">here</a>
+Challenge from Klika Tech. You could observe result <a href="https://stark-oasis-58039.herokuapp.com/" target="_blank">here</a>.
 
 This client-server web application implements:
 * Filter the Playlist by fields

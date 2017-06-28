@@ -16,17 +16,6 @@ This client-server web application implements:
 * Resolved pagination
 * Hard-style EJS Front-End
 
-## Demo
-
-### Header
-![screenshot](https://github.com/Grinzzly/KlikaTech/blob/master/public/img/Capture%201.JPG?raw=true "Demo")
-
-### Add song & Filter
-![screenshot](https://github.com/Grinzzly/KlikaTech/blob/master/public/img/Capture%202.JPG?raw=true "Demo")
-
-### Playlist
-![screenshot](https://github.com/Grinzzly/KlikaTech/blob/master/public/img/Capture%203.JPG?raw=true "Demo")
-
 ## Technology used
 * __AngularJS__
 * __EJS__

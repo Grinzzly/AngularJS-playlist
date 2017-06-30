@@ -19,12 +19,8 @@ This client-server web application implements:
 ## Technology used
 * __AngularJS__
 * __EJS__
+* __Node.js__
 * __jQuery__
 * __MongoDB__
 * __AWS__
-* __Node.js__
-  * ejs
-  * mongo
-  * mongoose
-  * morgan
-  * noty
+

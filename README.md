@@ -1,4 +1,4 @@
-<h1 align="center">ChallengeTask</h1>
+<h1 align="center">ChallengeTask from Klika Tech</h1>
 
 <div align="center">
   <sub>The little APP that could. Built by

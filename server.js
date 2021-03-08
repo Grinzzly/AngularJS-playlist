@@ -1,5 +1,4 @@
 var express  = require('express');
-var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
@@ -18,11 +17,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(favicon(__dirname + '/public/img/favicon.ico'));
 
-
-
 app.use('/', express.static('public'));
 app.use('/', express.static('views'));
-
 
 var myMusicalRoutes = require('./app/routes/app');
 app.use('/', myMusicalRoutes);
